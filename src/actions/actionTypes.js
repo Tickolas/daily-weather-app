@@ -1,0 +1,3 @@
+export let LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export let LOGIN_FAILED = 'LOGIN_FAILED';
+export let LOGIN_STARTED = 'LOGIN_START';
