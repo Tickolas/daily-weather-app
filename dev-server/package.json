@@ -1,5 +1,5 @@
 {
-  "name": "sitoo-cors-server",
+  "name": "simple-cors-server",
   "dependencies": {
     "cors-anywhere": "^0.4.1"
   },
