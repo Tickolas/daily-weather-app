@@ -3,14 +3,12 @@ import { connect } from 'react-redux';
 import { login } from 'actions/user.actions';
 import { compose } from 'redux';
 import injectSheet from 'react-jss';
+import WeatherChart from 'components/WeatherChart/WeatherChart';
 
 const styles = {
     app: {
-        textAlign: 'center'
-    },
-
-    header: {
-        backgroundColor: '#282c34',
+        textAlign: 'center',
+        background: 'linear-gradient(to bottom, #49a5bf 0%,#75bdd1 59%,#93cede 100%)',
         minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
@@ -20,9 +18,7 @@ const styles = {
         color: 'white'
     },
 
-    link: {
-        color: '#61dafb'
-    }
+    header: {}
 };
 
 export const App = ({ classes, login }) => {
@@ -32,14 +28,8 @@ export const App = ({ classes, login }) => {
 
     return (
         <div className={classes.app}>
-            <header className={classes.header}>
-                <p>
-                    Edit <code>src/App.js</code> and save to reload.
-                </p>
-                <a className={classes.link} href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-                    Learn React
-                </a>
-            </header>
+            <header className={classes.header}>Today's temperature</header>
+            <WeatherChart />
         </div>
     );
 };
