@@ -1,6 +1,6 @@
 import * as TYPES from 'actions/actionTypes';
 
-const initialState = {
+export const initialState = {
     weather: null
 };
 

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { warn } from 'loglevel';
 
 export async function getTodaysWeather() {
     try {
@@ -7,11 +8,12 @@ export async function getTodaysWeather() {
                 '{me{home(id:"a8c210fc-2988-4f06-9fe9-ab1bad9529d5"){weather{minTemperature,maxTemperature,entries{time,temperature,type}}}}}'
         });
     } catch (e) {
-        return weatherData;
+        warn(`Failed to fetch weather data with error ${e}. Returning mock data instead.`);
+        return weatherDataMock;
     }
 }
 
-const weatherData = {
+export const weatherDataMock = {
     data: {
         me: {
             home: {

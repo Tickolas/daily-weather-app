@@ -16,7 +16,7 @@ export function getTodaysWeather() {
         } catch (e) {
             error(e);
             dispatch({
-                type: TYPES.FAKE_WEATHER_FAILED
+                type: TYPES.FETCH_WEATHER_FAILED
             });
         }
     };

@@ -4,6 +4,8 @@ import { login } from 'actions/user.actions';
 import { compose } from 'redux';
 import injectSheet from 'react-jss';
 import WeatherChart from 'components/WeatherChart/WeatherChart';
+import Button from 'components/Button/Button';
+import { getTodaysWeather } from 'actions/weather.actions';
 
 const styles = {
     app: {
@@ -13,29 +15,38 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        justifyContent: 'center',
-        fontSize: 'calc(10px + 2vmin)',
-        color: 'white'
+        justifyContent: 'center'
     },
 
-    header: {}
+    header: {
+        width: '100%',
+        fontSize: 'calc(10px + 2vmin)',
+        color: 'white',
+        display: 'flex',
+        justifyContent: 'space-between'
+    }
 };
 
-export const App = ({ classes, login }) => {
+export const App = ({ classes, login, refresh }) => {
     useEffect(() => {
         login();
     }, [login]);
 
     return (
         <div className={classes.app}>
-            <header className={classes.header}>Today's temperature</header>
+            <header className={classes.header}>
+                <span />
+                <span>Today's temperature</span>
+                <Button onClick={refresh}>Refresh</Button>
+            </header>
             <WeatherChart />
         </div>
     );
 };
 
 const mapDispatchToProps = dispatch => ({
-    login: () => dispatch(login())
+    login: () => dispatch(login()),
+    refresh: () => dispatch(getTodaysWeather())
 });
 
 export default compose(connect(null, mapDispatchToProps), injectSheet(styles))(App);

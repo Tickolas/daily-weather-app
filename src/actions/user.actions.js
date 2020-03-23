@@ -12,9 +12,7 @@ export function login() {
 
             dispatch({
                 type: TYPES.LOGIN_SUCCESS,
-                payload: {
-                    auth: result.data.includes('<!DOCTYPE') ? 'FAKE_AUTH' : result.data
-                }
+                payload: result.data.token
             });
             dispatch(getTodaysWeather());
         } catch (e) {
