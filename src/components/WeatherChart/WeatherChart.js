@@ -7,13 +7,13 @@ import 'chart.js';
 import { formatForChart } from 'util/chart.util';
 
 const styles = {
-    graph: {
-        width: '80%'
+    container: {
+        width: '100%'
     }
 };
 
 export const WeatherChart = ({ classes, weatherData }) => (
-    <div className={classes.graph}>
+    <div className={classes.container}>
         <LineChart
             label={'Temperature'}
             suffix={'°C'}
@@ -24,7 +24,7 @@ export const WeatherChart = ({ classes, weatherData }) => (
 );
 
 const mapStateToProps = state => ({
-    weatherData: state.weather.weather
+    weatherData: state.weather.weatherData
 });
 
 export default compose(connect(mapStateToProps), injectSheet(styles))(WeatherChart);

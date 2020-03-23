@@ -1,4 +1,4 @@
-## Weather App
+## Weather Footer
 
 This is a simple app to show my code style and problem solving skills
 by calling a weather API and fetching data, which is then shown in a

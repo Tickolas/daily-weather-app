@@ -4,11 +4,32 @@ exports[`Button Default form should match snapshot 1`] = `
 <Button
   classes={Object {}}
   onClick={[Function]}
+  text="Default button"
 >
   <button
+    className=""
     onClick={[Function]}
   >
     Default button
+  </button>
+</Button>
+`;
+
+exports[`Button Default form should match snapshot with icon 1`] = `
+<Button
+  classes={Object {}}
+  icon="refresh.svg"
+  onClick={[Function]}
+  text="Icon button"
+>
+  <button
+    className=""
+    onClick={[Function]}
+  >
+    <img
+      src="refresh.svg"
+    />
+    Icon button
   </button>
 </Button>
 `;

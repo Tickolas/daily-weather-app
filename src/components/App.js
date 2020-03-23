@@ -4,49 +4,40 @@ import { login } from 'actions/user.actions';
 import { compose } from 'redux';
 import injectSheet from 'react-jss';
 import WeatherChart from 'components/WeatherChart/WeatherChart';
-import Button from 'components/Button/Button';
-import { getTodaysWeather } from 'actions/weather.actions';
+import LoadingModal from 'components/LoadingModal/LoadingModal';
+import Header from 'components/Header/Header';
+import Footer from 'components/Footer/Footer';
 
 const styles = {
     app: {
-        textAlign: 'center',
-        background: 'linear-gradient(to bottom, #49a5bf 0%,#75bdd1 59%,#93cede 100%)',
         minHeight: '100vh',
+        maxWidth: 800,
+        padding: 8,
+        margin: 'auto',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center'
-    },
-
-    header: {
-        width: '100%',
-        fontSize: 'calc(10px + 2vmin)',
-        color: 'white',
-        display: 'flex',
-        justifyContent: 'space-between'
     }
 };
 
-export const App = ({ classes, login, refresh }) => {
+export const App = ({ classes, login }) => {
     useEffect(() => {
         login();
     }, [login]);
 
     return (
         <div className={classes.app}>
-            <header className={classes.header}>
-                <span />
-                <span>Today's temperature</span>
-                <Button onClick={refresh}>Refresh</Button>
-            </header>
+            <Header />
             <WeatherChart />
+            <Footer />
+            <LoadingModal />
         </div>
     );
 };
 
 const mapDispatchToProps = dispatch => ({
-    login: () => dispatch(login()),
-    refresh: () => dispatch(getTodaysWeather())
+    login: () => dispatch(login())
 });
 
 export default compose(connect(null, mapDispatchToProps), injectSheet(styles))(App);

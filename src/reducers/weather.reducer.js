@@ -1,7 +1,7 @@
 import * as TYPES from 'actions/actionTypes';
 
 export const initialState = {
-    weather: null
+    weatherData: null
 };
 
 export default (state = initialState, { type, payload }) => {
@@ -9,7 +9,7 @@ export default (state = initialState, { type, payload }) => {
         case TYPES.FETCH_WEATHER_SUCCESS:
             return {
                 ...state,
-                weather: payload
+                weatherData: payload
             };
         default:
             return state;

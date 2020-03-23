@@ -3,7 +3,7 @@ import * as TYPES from 'actions/actionTypes';
 import axios from 'axios';
 import { BASE_URL } from 'constants/api.constants';
 
-describe('App reducer', () => {
+describe('Footer reducer', () => {
     it('should handle LOGIN_STARTED', () => {
         const newState = reducer(initialState, { type: TYPES.LOGIN_STARTED });
 

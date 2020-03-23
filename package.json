@@ -5,6 +5,9 @@
   "dependencies": {
     "axios": "^0.19.2",
     "chart.js": "^2.9.3",
+    "classnames": "^2.2.6",
+    "lodash.flatmap": "^4.5.0",
+    "lodash.sumby": "^4.6.0",
     "loglevel": "^1.6.7",
     "moment": "^2.24.0",
     "react": "^16.13.1",

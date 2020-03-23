@@ -9,6 +9,6 @@ describe('Weather reducer', () => {
             payload: weatherDataMock.data.me.home.weather
         });
 
-        expect(newState).toEqual({ weather: weatherDataMock.data.me.home.weather });
+        expect(newState).toEqual({ weatherData: weatherDataMock.data.me.home.weather });
     });
 });
