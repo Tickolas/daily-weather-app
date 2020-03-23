@@ -9,7 +9,7 @@ export default (state = initialState, { type, payload }) => {
         case TYPES.FETCH_WEATHER_SUCCESS:
             return {
                 ...state,
-                weather: payload.me.home.weather
+                weather: payload
             };
         default:
             return state;

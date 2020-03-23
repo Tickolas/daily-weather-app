@@ -11,7 +11,7 @@ export function getTodaysWeather() {
 
             dispatch({
                 type: TYPES.FETCH_WEATHER_SUCCESS,
-                payload: result.data
+                payload: result.data.data.me.home.weather
             });
         } catch (e) {
             error(e);

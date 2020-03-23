@@ -1,7 +1,8 @@
 import * as TYPES from 'actions/actionTypes';
-import { getTodaysWeather, weatherDataMock } from 'service/weather.service';
+import { getTodaysWeather } from 'service/weather.service';
 import * as actions from 'actions/weather.actions';
 import { error } from 'loglevel';
+import { weatherDataMock } from '__mocks__/weather.mock';
 
 jest.mock('service/weather.service');
 
@@ -23,7 +24,7 @@ describe('Weather actions', () => {
         it('should handle a successful fetch', async () => {
             const expected = [
                 { type: TYPES.FETCH_WEATHER_STARTED },
-                { type: TYPES.FETCH_WEATHER_SUCCESS, payload: weatherDataMock }
+                { type: TYPES.FETCH_WEATHER_SUCCESS, payload: weatherDataMock.data.me.home.weather }
             ];
 
             getTodaysWeather.mockResolvedValue({ data: weatherDataMock });
