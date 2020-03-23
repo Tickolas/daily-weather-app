@@ -1,3 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Button Default form should match snapshot 1`] = `ReactWrapper {}`;
+exports[`Button Default form should match snapshot 1`] = `
+<Button
+  classes={Object {}}
+  onClick={[Function]}
+>
+  <button
+    onClick={[Function]}
+  >
+    Default button
+  </button>
+</Button>
+`;
